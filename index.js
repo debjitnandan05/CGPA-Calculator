@@ -5,7 +5,9 @@ cgpa.addEventListener('input',function(){
 
     if(cgp<=10 && cgp>0.76)
           {
-              per.value = (cgp-.76)*10;
+             let p = (cgp-.76)*10;
+             if(!Number.isInteger(p))
+                per.value=p.toFixed(2);
           }
 
     else if(cgp>=0 && cgp<=0.76){
@@ -25,7 +27,9 @@ per.addEventListener('input',function(){
     let p=this.value;
 
     if(p<=92.4 && p>0){
-        cgpa.value=(p/10)+0.76;
+        let c=(p/10)+0.76;
+        if(!Number.isInteger(c))
+        cgpa.value=c.toFixed(2);
     }
 
     else if(p>92.4 && p<=100){
